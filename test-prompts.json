@@ -1,0 +1,22 @@
+[
+  {
+    "id": "bootstrap-missing-info",
+    "prompt": "我想学习 AI 产品经理，每天 60 分钟，目标是找工作，帮我创建学习仓库。",
+    "expected": "Create learning-repo, record missing final project assumptions, write P0 files, Day 1, 30-day plan, project brief, and run validation."
+  },
+  {
+    "id": "daily-run",
+    "prompt": "继续今天的学习。",
+    "expected": "Read progress.md, identify current day, read today's task, guide completion, and update relevant logs after user output."
+  },
+  {
+    "id": "expert-room",
+    "prompt": "我分不清机器学习里的泛化和过拟合，邀请几个专家帮我解释并给练习。",
+    "expected": "Invite 3-5 expert lenses, explain differences, debate risks, synthesize a practice task, and name repo updates."
+  },
+  {
+    "id": "replan",
+    "prompt": "我每天只有 25 分钟了，路线太重，请保留之前记录并重排后续计划。",
+    "expected": "Enter REPLAN, preserve completed records, update intake/assumptions/progress, adjust future tasks, and avoid rewriting history."
+  }
+]
