@@ -18,5 +18,10 @@
     "id": "replan",
     "prompt": "我每天只有 25 分钟了，路线太重，请保留之前记录并重排后续计划。",
     "expected": "Enter REPLAN, preserve completed records, update intake/assumptions/progress, adjust future tasks, and avoid rewriting history."
+  },
+  {
+    "id": "existing-repo-conflict",
+    "prompt": "这个目录里已经有 learning-repo 了，但我想换成学习投资研究，请直接重建。",
+    "expected": "Read existing progress and intake first, refuse silent overwrite, use CHECKPOINT before replacing non-template records, and preserve prior history unless the user explicitly confirms deletion."
   }
 ]

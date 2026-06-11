@@ -21,6 +21,13 @@ REQUIRED_FILES = [
     "scripts/check_learning_repo.py",
     "test-prompts.json",
 ]
+REQUIRED_SKILL_MARKERS = [
+    "## Failure Handling",
+    "## CHECKPOINT / STOP Gates",
+    "No writable path",
+    "Existing `learning-repo/`",
+    "claim a repository was created when files were not actually written",
+]
 
 
 def read_text(path: Path) -> str:
@@ -49,6 +56,14 @@ def check_references_linked(skill_text: str) -> list[str]:
         rel = path.relative_to(ROOT).as_posix()
         if rel not in skill_text:
             issues.append(f"Reference not linked from SKILL.md: {rel}")
+    return issues
+
+
+def check_required_skill_markers(skill_text: str) -> list[str]:
+    issues: list[str] = []
+    for marker in REQUIRED_SKILL_MARKERS:
+        if marker not in skill_text:
+            issues.append(f"SKILL.md missing required marker: {marker}")
     return issues
 
 
@@ -94,6 +109,7 @@ def main() -> int:
         skill_text = read_text(skill_path)
         issues.extend(check_frontmatter(skill_text))
         issues.extend(check_references_linked(skill_text))
+        issues.extend(check_required_skill_markers(skill_text))
 
     issues.extend(check_json())
     issues.extend(check_no_generated_cache())

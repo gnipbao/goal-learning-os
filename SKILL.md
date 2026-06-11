@@ -94,6 +94,30 @@ After creating or materially changing a learning repo:
 5. Check final project starts on Day 1.
 6. Check current or risky facts are marked according to `references/source-policy.md`.
 
+## Failure Handling
+
+Use this table before replying when a run is incomplete or risky:
+
+| Trigger | First response | Fallback if still blocked |
+|---|---|---|
+| No writable path for `learning-repo/` | Produce the complete repository plan and ask for a writable path. Do not claim files were created. | Give a copy-ready tree and file list, then stop before pretending to persist state. |
+| Existing `learning-repo/` has user records | Read `progress.md`, `00_meta/intake.md`, and today's task before editing. | CHECKPOINT before overwriting non-template files; append new sections instead of replacing history. |
+| Required intake fields are missing | Record assumptions in `00_meta/assumptions.md` and continue with defaults. | If final project is still ambiguous, choose the smallest useful default and mark it reversible. |
+| Generated repo fails `scripts/check_learning_repo.py` | Repair missing P0 files, daily markers, tests, and Day 1 project step. | Rerun once; if it still fails, report exact failing files and stop. |
+| Day task exceeds the time budget | Reduce reading first, keep practice/output/test, and write a lighter task variant. | Enter REPLAN and adjust future tasks without changing completed records. |
+| Current, legal, medical, financial, safety, or software-version facts are needed | Mark the claim as needing latest-source verification and avoid decision advice. | Ask for sources or browsing; continue only with learning structure and questions. |
+| User asks named experts to join | Convert names into perspective lenses and disclose that the room is simulated. | Use role lenses instead of names if identity or current claims would be misleading. |
+
+## CHECKPOINT / STOP Gates
+
+Pause and ask the user before these actions:
+
+- CHECKPOINT before overwriting any existing non-template file in `learning-repo/`.
+- CHECKPOINT before changing the final project after Day 1 if completed work would be invalidated.
+- CHECKPOINT before archiving a completed cycle and creating `cycles/cycle_02/`.
+- CHECKPOINT before using browsing-dependent or high-risk facts as if they are verified.
+- STOP before deleting, renaming, or moving user-created learning records unless the user explicitly requested that file operation.
+
 ## Operating Modes
 
 ### Mode A: BOOTSTRAP
@@ -161,6 +185,7 @@ Select 3-5 expert lenses, answer the user question from each lens, then synthesi
 Do not:
 
 - give only a study plan when the user asked to create a repo
+- claim a repository was created when files were not actually written
 - create a 30-day plan without a final project
 - wait until the last week to start the final project
 - make every day reading-heavy
